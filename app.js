@@ -265,5 +265,4 @@ document.addEventListener("DOMContentLoaded", LStorage.retrieveContacts);
 
 
 
-//ADD SORT LIST FUNCTION BY FIRSTNAME, LASTNAME, NUMBER
 ///https://github.com/Flutebow/phoneBook.git
