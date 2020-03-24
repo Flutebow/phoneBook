@@ -86,6 +86,7 @@ class LStorage {
         }
         return phoneList;
     }
+
     static addToLocalStorage(contact) {
         const contacts = LStorage.getContacts();
         contacts.push(contact);
@@ -125,11 +126,11 @@ class LStorage {
                 contacts.splice(index, 1, updatedContact);
             }
         });
+
         localStorage.setItem("contacts", JSON.stringify(contacts));
-
     }
-
 }
+
 addNewContactBtn.addEventListener("click", (e) => {
     toggleModal(e);
 });
@@ -150,27 +151,21 @@ cancelAddBtn.addEventListener("click", (e) => {
 });
 
 confirmAddBtn.addEventListener("click", (e) => {
-
     const fName = addFirstName.value,
         lName = addLastName.value,
         number = addNumberInput.value;
 
-    //Instantiate new contact
     const contact = new Contact(fName, lName, number);
 
-    //check if success or error
     if (fName === "" || lName === "" || number === "") {
         alert("Please fill all requred fields")
     } else {
-        //Add contact to list
         UI.addContact(contact);
         LStorage.addToLocalStorage(contact);
-        //Clear fields
         clearInputs();
         toggleModal(e);
     }
 });
-
 
 cancelUpdateBtn.addEventListener("click", (e) => {
     toggleModal(e);
@@ -187,7 +182,6 @@ confirmUpdateBtn.addEventListener("click", (e) => {
         toggleModal(e);
         clearInputs();
     }
-
 });
 
 cancelDelBtn.addEventListener("click", (e) => {
@@ -199,6 +193,10 @@ confirmDelBtn.addEventListener("click", (e) => {
     UI.deleteContact(delContact);
     toggleModal(e);
 });
+
+filterInput.addEventListener("keyup", UI.filterContacts);
+
+document.addEventListener("DOMContentLoaded", LStorage.retrieveContacts);
 
 document.querySelector(".phone-list").addEventListener("click", (e) => {
     if (e.target.classList.contains("del-btn")) {
@@ -218,7 +216,7 @@ document.querySelector(".phone-list").addEventListener("click", (e) => {
 const toggleModal = (e) => {
     if (e.target.classList.contains("add-btn") ||
         e.target.classList.contains("cancel-add") ||
-        e.target.classList.contains("confirm-add")) {            
+        e.target.classList.contains("confirm-add")) {
         backdrop.classList.toggle("visible");
         newContactModal.classList.toggle("visible");
     }
@@ -249,10 +247,5 @@ const clearInputs = () => {
     addLastName.value = "";
     addNumberInput.value = "";
 };
-
-//Filter tasks
-filterInput.addEventListener("keyup", UI.filterContacts);
-
-document.addEventListener("DOMContentLoaded", LStorage.retrieveContacts);
 
 ///https://github.com/Flutebow/phoneBook.git

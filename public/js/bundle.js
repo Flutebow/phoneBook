@@ -126,11 +126,11 @@ class LStorage {
                 contacts.splice(index, 1, updatedContact);
             }
         });
+        
         localStorage.setItem("contacts", JSON.stringify(contacts));
-
     }
-
 }
+
 addNewContactBtn.addEventListener("click", (e) => {
     toggleModal(e);
 });
@@ -156,22 +156,17 @@ confirmAddBtn.addEventListener("click", (e) => {
         lName = addLastName.value,
         number = addNumberInput.value;
 
-    //Instantiate new contact
     const contact = new Contact(fName, lName, number);
 
-    //check if success or error
     if (fName === "" || lName === "" || number === "") {
         alert("Please fill all requred fields")
     } else {
-        //Add contact to list
         UI.addContact(contact);
         LStorage.addToLocalStorage(contact);
-        //Clear fields
         clearInputs();
         toggleModal(e);
     }
 });
-
 
 cancelUpdateBtn.addEventListener("click", (e) => {
     toggleModal(e);
@@ -188,7 +183,6 @@ confirmUpdateBtn.addEventListener("click", (e) => {
         toggleModal(e);
         clearInputs();
     }
-
 });
 
 cancelDelBtn.addEventListener("click", (e) => {
@@ -201,6 +195,10 @@ confirmDelBtn.addEventListener("click", (e) => {
     toggleModal(e);
 });
 
+filterInput.addEventListener("keyup", UI.filterContacts);
+
+document.addEventListener("DOMContentLoaded", LStorage.retrieveContacts);
+
 document.querySelector(".phone-list").addEventListener("click", (e) => {
     if (e.target.classList.contains("del-btn")) {
         delContact = e.target.parentElement.parentElement;
@@ -211,11 +209,8 @@ document.querySelector(".phone-list").addEventListener("click", (e) => {
         updateFirstName.value = e.target.parentElement.parentElement.firstElementChild.textContent;
         updateLastName.value = e.target.parentElement.parentElement.children[1].textContent;
         updateNumber.value = e.target.parentElement.previousElementSibling.textContent;
-
         modNumber = e.target.parentElement.previousElementSibling.textContent;
-
-        updateContactModal.classList.toggle("visible");
-        backdrop.classList.toggle("visible");
+        toggleModal(e);
     }
 });
 
@@ -253,11 +248,6 @@ const clearInputs = () => {
     addLastName.value = "";
     addNumberInput.value = "";
 };
-
-//Filter tasks
-filterInput.addEventListener("keyup", UI.filterContacts);
-
-document.addEventListener("DOMContentLoaded", LStorage.retrieveContacts);
 
 ///https://github.com/Flutebow/phoneBook.git
 },{}]},{},[1]);

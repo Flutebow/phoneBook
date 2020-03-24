@@ -12,7 +12,3 @@ let server = app.listen(9005, () => {
     let port = server.address().port;
     console.log("Server started at http://localhost:%s", port); 
 });
-
-
-    // "start": "node server.js"
-    // "run": "live-server"
