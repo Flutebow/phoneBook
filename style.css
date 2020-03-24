@@ -284,7 +284,7 @@ th:last-of-type {
     /* box-sizing: border-box; */
 }
 
-@media only screen and (max-width: 952px) {
+@media only screen and (max-width: 932px) {
     .mod-btn {
         border-radius: 10px 10px 0 0;
         line-height: 1.3rem;
