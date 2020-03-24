@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/Flutebow/phoneBook#readme",
   "dependencies": {
-    "live-server": "^1.2.1",
-    "vue": "^2.6.11"
+    "live-server": "^1.2.1"
   }
 }

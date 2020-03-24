@@ -8,8 +8,44 @@ h1 {
     font-family: 'Itim', cursive;
 }
 
+h2 {
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid #009879;
+    background: #009879;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
 p {
     font-size: 1.5rem;
+}
+
+tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    border-width: 0px;
+    border: none;
+    border-bottom: 1px solid #a1a1a1;
+    font-size: 1rem;
+}
+
+label {
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #464646;
+    float: left;
+    font-size: 1.2rem;
 }
 
 .container {
@@ -34,26 +70,6 @@ p {
     width: 75%;
 }
 
-.phone-list thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    font-weight: bold;
-    /* box-sizing: border-box; */
-    border: 2px solid #009879;
-}
-
-.phone-list th, .phone-list td {
-    padding: 12px 15px;
-}
-
-tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-tr:nth-of-type(even) {
-    background-color: #f9f9f9;
-}
-
 tr:last-of-type {
     border-bottom: 2px solid #009879;
 }
@@ -68,7 +84,6 @@ td button {
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
-    /* width: 6rem; */
 }
 
 button:hover {
@@ -105,43 +120,9 @@ button:hover {
 
 .edit {
     text-align: center;
-    /* margin: 0 6rem; */
 }
 
-/* .row a {
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #009879;
-    padding: 20px;
-    border-radius: 50px;
-    display: inline-block;
-    border: none;
-    transition: all 0.4s ease 0s;
-    cursor: pointer;
-}
 
-.row a:hover {
-    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    transition: all 0.4s ease 0s;
-} */
-
-.row a {
-    color: #009879;
-    text-transform: uppercase;
-    text-decoration: none;
-    background-color: #ffffff;
-    padding: 5px;
-    /* border-radius: 50px; */
-    display: inline-block;
-    border: 1px solid #009879;
-    transition: all 0.4s ease 0s;
-    cursor: pointer;
-    width: 5rem;
-}
 
 .add-btn {
     border-radius: 50px 0 0 50px;
@@ -150,18 +131,6 @@ button:hover {
 .filter-btn {
     border-radius: 0 50px 50px 0;
     margin: 0;
-}
-
-.row a:hover {
-    text-shadow: 0px 0px 6px #009879;
-    -webkit-box-shadow: 0px 5px 40px -10px #009879;
-    -moz-box-shadow: 0px 5px 40px -10px #009879;
-    box-shadow: 0px 5px 40px -10px #009879;
-    /* background-color: #e2f7f325; */
-    transition: all 0.4s ease 0s;
-    background-color: #c0dfd6;
-    color: #ffffff;
-    /* background: #00987a17; */
 }
 
 .modal {
@@ -179,7 +148,6 @@ button:hover {
 
 .modal.visible {
     display: block;
-    /* animation: fade-slide-in 0.3s ease-out forwards; */
 }
 
 .backdrop {
@@ -199,14 +167,6 @@ button:hover {
     pointer-events: all;
 }
 
-label {
-    font-weight: bold;
-    margin: 0.5rem 0;
-    color: #464646;
-    float: left;
-    font-size: 1.2rem;
-}
-
 .modal .modal-content {
     padding: 1rem;
 }
@@ -215,42 +175,28 @@ label {
     padding: 1rem;
 }
 
-h2 {
-    margin: 0;
-    padding: 1rem;
-    border-bottom: 1px solid #009879;
-    background: #009879;
-    color: white;
-    border-radius: 10px 10px 0 0;
-}
-
-input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    outline: none;
-    border-width: 0px;
-    border: none;
-    border-bottom: 1px solid #a1a1a1;
-    font-size: 1rem;
-}
-
 .filter {
     display: none;
     width: 75%;
     margin: 2rem auto 0 auto;
-    /* animation: fade-slide-in 0.3s ease-out forwards; */
-    /* transition: all .5s ease; */
-
 }
 
 .filter.visible {
     display: block;
     animation: fade-in 1s;
+}
+
+.row a {
+    color: #009879;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #ffffff;
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid #009879;
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+    width: 5rem;
 }
 
 .modal-actions .btn {
@@ -278,13 +224,50 @@ input {
     background: #00987a17;
 }
 
+td button {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 900;
+    border: 1px solid #d6d6d6;
+    border-radius: 50px;
+    line-height: 2rem;
+    padding: 0 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
+
 th:last-of-type {
     background: #46887b;
     border: 2px solid #009879;
-    /* box-sizing: border-box; */
 }
 
-@media only screen and (max-width: 932px) {
+.phone-list thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid #009879;
+}
+
+.phone-list th, .phone-list td {
+    padding: 12px 15px;
+}
+
+.row a:hover {
+    text-shadow: 0px 0px 6px #009879;
+    -webkit-box-shadow: 0px 5px 40px -10px #009879;
+    -moz-box-shadow: 0px 5px 40px -10px #009879;
+    box-shadow: 0px 5px 40px -10px #009879;
+    transition: all 0.4s ease 0s;
+    background-color: #c0dfd6;
+    color: #ffffff;
+}
+
+tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+
+@media only screen and (max-width: 939px) {
     .mod-btn {
         border-radius: 10px 10px 0 0;
         line-height: 1.3rem;

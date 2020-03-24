@@ -1,26 +1,26 @@
-const addNewContactBtn = document.querySelector(".add-btn");
-const newContactModal = document.getElementById("add-modal");
-const updateContactModal = document.getElementById("update-modal");
-const delModal = document.querySelector("#del-modal");
-const backdrop = document.querySelector(".backdrop");
-const showFilterBtn = document.querySelector(".filter-btn");
-const filter = document.querySelector(".filter");
-const cancelAddBtn = newContactModal.querySelector(".cancel-add");
-const confirmAddBtn = newContactModal.querySelector(".confirm-add");
-const cancelUpdateBtn = updateContactModal.querySelector(".cancel-update");
-const confirmUpdateBtn = updateContactModal.querySelector(".confirm-update");
-const addFirstName = document.getElementById("first-name");
-const addLastName = document.getElementById("last-name");
-const addNumberInput = document.getElementById("number");
-const filterInput = document.getElementById("filter");
-const updateFirstName = document.getElementById("update-first-name");
-const updateLastName = document.getElementById("update-last-name");
-const updateNumber = document.getElementById("update-number");
-const cancelDelBtn = document.querySelector(".cancel-del");
-const confirmDelBtn = document.querySelector(".confirm-del");
+const addNewContactBtn = document.querySelector(".add-btn"),
+    newContactModal = document.getElementById("add-modal"),
+    updateContactModal = document.getElementById("update-modal"),
+    delModal = document.querySelector("#del-modal"),
+    backdrop = document.querySelector(".backdrop"),
+    showFilterBtn = document.querySelector(".filter-btn"),
+    filter = document.querySelector(".filter"),
+    cancelAddBtn = newContactModal.querySelector(".cancel-add"),
+    confirmAddBtn = newContactModal.querySelector(".confirm-add"),
+    cancelUpdateBtn = updateContactModal.querySelector(".cancel-update"),
+    confirmUpdateBtn = updateContactModal.querySelector(".confirm-update"),
+    addFirstName = document.getElementById("first-name"),
+    addLastName = document.getElementById("last-name"),
+    addNumberInput = document.getElementById("number"),
+    filterInput = document.getElementById("filter"),
+    updateFirstName = document.getElementById("update-first-name"),
+    updateLastName = document.getElementById("update-last-name"),
+    updateNumber = document.getElementById("update-number"),
+    cancelDelBtn = document.querySelector(".cancel-del"),
+    confirmDelBtn = document.querySelector(".confirm-del");
 
-let modNumber;
-let delContact;
+let modNumber,
+    delContact;
 
 class Contact {
     constructor(firstName, lastName, number) {
@@ -64,7 +64,7 @@ class UI {
         });
     }
 
-    static updateContact(e) {
+    static updateContact() {
         const contacts = document.querySelectorAll("tr");
         contacts.forEach(contact => {
             if (modNumber === contact.children[2].textContent) {
@@ -233,12 +233,10 @@ const toggleModal = (e) => {
         updateContactModal.classList.toggle("visible");
     }
     if (e.target.classList.contains("backdrop")) {
-
         backdrop.classList.remove("visible");
         newContactModal.classList.remove("visible");
         updateContactModal.classList.remove("visible");
         delModal.classList.remove("visible");
-
     }
 
     if (e.target.classList.contains("del-btn") ||
@@ -247,8 +245,6 @@ const toggleModal = (e) => {
         delModal.classList.toggle("visible");
         backdrop.classList.toggle("visible");
     }
-
-
 };
 
 const clearInputs = () => {
@@ -260,9 +256,6 @@ const clearInputs = () => {
 //Filter tasks
 filterInput.addEventListener("keyup", UI.filterContacts);
 
-
 document.addEventListener("DOMContentLoaded", LStorage.retrieveContacts);
-
-
 
 ///https://github.com/Flutebow/phoneBook.git
