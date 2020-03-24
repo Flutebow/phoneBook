@@ -1,0 +1,315 @@
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+    font-size: 4rem;
+    font-family: 'Itim', cursive;
+}
+
+h2 {
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid #009879;
+    background: #009879;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    border-width: 0px;
+    border: none;
+    border-bottom: 1px solid #a1a1a1;
+    font-size: 1rem;
+}
+
+label {
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: #464646;
+    float: left;
+    font-size: 1.2rem;
+}
+
+.container {
+    max-width: 85%;
+    min-width: 500px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    /* border: 1px solid #dddddd; */
+    padding-bottom: 10rem;
+    position: relative;
+    /* -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; */
+}
+
+.phone-list {
+    border-collapse: collapse;
+    margin: 25px auto;
+    font-size: 08 rem;
+    min-width: 15 rem;
+    width: 90%;
+}
+
+tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+td button {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 900;
+    border: 1px solid #d6d6d6;
+    border-radius: 50px;
+    line-height: 2rem;
+    padding: 0 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
+
+button:hover {
+    background-color: #e6e6e6;
+}
+
+.mod-btn {
+    background-color: #fdc2003a;
+    border-radius: 50px 0 0 50px;
+}
+
+.mod-btn:hover {
+    background-color: #fdad00;
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.4s ease 0s;
+}
+
+.del-btn {
+    background-color: #ff00002c;
+    border-radius: 0 50px 50px 0;
+}
+
+.del-btn:hover {
+    background-color: #f54e4e;
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.4s ease 0s;
+}
+
+.edit {
+    text-align: center;
+}
+
+.add-btn {
+    border-radius: 50px 0 0 50px;
+    margin: 0;
+    display: block;
+}
+.filter-btn {
+    border-radius: 0 50px 50px 0;
+    margin: 0;
+    display: block;
+}
+
+.modal {
+    position: fixed;
+    z-index: 100;
+    background: white;
+    border-radius: 10px;
+    width: 50%;
+    top: 20vh;
+    left: 25%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    display: none;
+    text-align: center;
+}
+
+.modal.visible {
+    display: block;
+}
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    pointer-events: none;
+    display: none;
+}
+
+.backdrop.visible {
+    display: block;
+    pointer-events: all;
+}
+
+.modal .modal-content {
+    padding: 1rem;
+}
+
+.modal-actions {
+    padding: 1rem;
+}
+
+.filter {
+    display: none;
+    width: 75%;
+    margin: 2rem auto 0 auto;
+}
+
+.filter.visible {
+    display: block;
+    animation: fade-in 1s;
+}
+
+.row a {
+    color: #009879;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #ffffff;
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid #009879;
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+    width: 5rem;
+}
+
+.modal-actions .btn {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #009879;
+    padding: 10px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    cursor: pointer;
+}
+
+.modal-actions .btn:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.4s ease 0s;
+}
+
+.contact:hover {
+    background: #00987a17;
+}
+
+td button {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 900;
+    border: 1px solid #d6d6d6;
+    border-radius: 50px;
+    line-height: 2rem;
+    padding: 0 16px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
+
+th:last-of-type {
+    background: #46887b;
+    border: 2px solid #009879;
+}
+
+.phone-list thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid #009879;
+}
+
+.phone-list th, .phone-list td {
+    padding: 12px 15px;
+}
+
+.row a:hover {
+    text-shadow: 0px 0px 6px #009879;
+    -webkit-box-shadow: 0px 5px 40px -10px #009879;
+    -moz-box-shadow: 0px 5px 40px -10px #009879;
+    box-shadow: 0px 5px 40px -10px #009879;
+    transition: all 0.4s ease 0s;
+    background-color: #c0dfd6;
+    color: #ffffff;
+}
+
+tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+@media only screen and (max-width: 810px) {
+
+    .mod-btn {
+        border-radius: 10px 10px 0 0;
+        line-height: 1.3rem;
+        border: 0px;
+        padding: 0 1.5rem;
+        /* display: block; */
+        width: 6rem;
+        margin: 0 auto;
+    }
+    .del-btn {
+        border-radius: 0 0 10px 10px;
+        line-height: 1.3rem;
+        border: 0px;
+        padding: 0 1.5rem;
+        /* display: block; */
+        width: 6rem;
+        margin: 0 auto;
+    }
+
+    .add-btn {
+        border-radius: 10px 10px 0 0;
+        line-height: 1.3rem;
+        border: 0px;
+        padding: 0 1.5rem;
+        display: block;
+        
+    }
+
+    .filter-btn {
+        border-radius: 0 0 10px 10px;
+        line-height: 1.3rem;
+        border: 0px;
+        padding: 0 1.5rem;
+        display: block;      
+    }
+
+    .hide{
+        display: none;
+    }
+
+    #head-btns{
+        width: 25%;
+    }
+
+}

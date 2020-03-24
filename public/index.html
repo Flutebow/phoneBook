@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Book</title>
+    <script src="js/bundle.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Itim|Quicksand:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="backdrop"></div>
+    <div class="modal" id="add-modal">
+        <h2 class="modal-title">Add Contact</h2>
+        <div class="modal-content">
+            <label for="first-name" class="label">First Name</label>
+            <input type="text" name="first-name" id="first-name" placeholder="John" required>
+            <label for="last-name" class="label">Last Name</label>
+            <input type="text" name="last-name" id="last-name" placeholder="Doe" required>
+            <label for="phone-number" class="label">Number</label>
+            <input type="tel" name="phone-number" id="number" placeholder="+46 70 123 4567" required>
+        </div>
+        <div class="modal-actions">
+            <a class="btn cancel-add"><i class="fa fa-times cancel-add"></i> CANCEL</a>
+            <a class="btn confirm-add"><i class="fa fa-plus confirm-add"></i> ADD</a>
+        </div>
+    </div>
+    <div class="modal" id="update-modal">
+        <h2 class="modal-title">Edit Contact</h2>
+        <div class="modal-content">
+            <label for="update-first-name" class="label">First Name</label>
+            <input type="text" name="update-first-name" id="update-first-name">
+            <label for="update-last-name" class="label">Last Name</label>
+            <input type="text" name="update-last-name" id="update-last-name">
+            <label for="update-phone-number" class="label">Number</label>
+            <input type="tel" name="update-phone-number" id="update-number">
+        </div>
+        <div class="modal-actions">
+            <a class="btn cancel-update"><i class="fa fa-times cancel-update"></i> CANCEL</a>
+            <a class="btn confirm-update"><i class="fa fa-edit confirm-update"></i> UPDATE</a>
+        </div>
+    </div>
+    <div class="modal" id="del-modal">
+        <h2 class="modal-title">Delete</h2>
+        <div class="modal-content">
+            <p>Are you sure?</p>
+        </div>
+        <div class="modal-actions">
+            <a class="btn cancel-del"><i class="fa fa-times cancel-del"></i> NO</a>
+            <a class="btn confirm-del"><i class="fa fa-check confirm-del"></i> YES</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" id="header">
+            <h1>Phone Book</h1>
+        </div>
+        <div class="row">
+            <div class="filter">
+                <input type="text" name="filter" id="filter" placeholder="Name or number">
+            </div>
+            <table class="phone-list">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Number</th>
+                        <th id="head-btns"> <a class="add-btn"><i class="fa fa-plus add-btn"></i> <span class="hide add-btn">
+                                    ADD</span></a>
+                            <a class="filter-btn"><i class="fa fa-search filter-btn"></i> <span class="hide filter-btn">
+                                    FILTER</span></a></th>
+                    </tr>
+                </thead>
+                <tbody class="list-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer class="foot">
+    </footer>
+</body>
+
+</html>
+
+
+
+
+
+<!-- Implement a simple phone book service as a Front-End GUI based on Java-Script.
+• The service should save a name and the corresponding phone number
+• A simple algorithm should be implemented for the efficient entry and retrieval from the phone book
+• GUI design is up to you but should be Responsive to some extent
+• Create a local storage to store the phonebook
+• Some Front-end framework could be used (preferably Vue.js, Optional)
+• Apply basic accessibility standards (Optional)
+• NPM based (Optional)
+• Dockerized (Optional)
+• Place ready solution on Github together with some instruction on how to start and test -->
