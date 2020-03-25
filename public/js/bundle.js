@@ -44,8 +44,8 @@ class UI {
         `
         contactList.appendChild(row);
     }
-    static deleteContact(target) {
-        target.remove();
+    static deleteContact(contact) {
+        contact.remove();
     }
 
     static filterContacts(e) {
@@ -56,7 +56,7 @@ class UI {
                 contact.children[1].textContent.toLowerCase().replace(/ +/g, "");
 
             if (fullName.includes(inputText.replace(/ +/g, "")) ||
-                contact.children[2].textContent.toLowerCase().replace(/ +/g, "").includes(inputText.replace(/ +/g, ""))) {
+                contact.children[2].textContent.replace(/ +/g, "").includes(inputText.replace(/ +/g, ""))) {
                 contact.style.display = "table-row";
 
             } else {
@@ -87,6 +87,7 @@ class LStorage {
         }
         return phoneList;
     }
+
     static addToLocalStorage(contact) {
         const contacts = LStorage.getContacts();
         contacts.push(contact);
@@ -126,7 +127,7 @@ class LStorage {
                 contacts.splice(index, 1, updatedContact);
             }
         });
-        
+
         localStorage.setItem("contacts", JSON.stringify(contacts));
     }
 }
@@ -142,7 +143,6 @@ backdrop.addEventListener("click", (e) => {
 
 showFilterBtn.addEventListener("click", () => {
     filter.classList.toggle("visible");
-    clearInputs();
 });
 
 cancelAddBtn.addEventListener("click", (e) => {
@@ -151,7 +151,6 @@ cancelAddBtn.addEventListener("click", (e) => {
 });
 
 confirmAddBtn.addEventListener("click", (e) => {
-
     const fName = addFirstName.value,
         lName = addLastName.value,
         number = addNumberInput.value;
@@ -170,18 +169,15 @@ confirmAddBtn.addEventListener("click", (e) => {
 
 cancelUpdateBtn.addEventListener("click", (e) => {
     toggleModal(e);
-    clearInputs();
-
 });
 
 confirmUpdateBtn.addEventListener("click", (e) => {
     if (!updateFirstName.value || !updateLastName.value || !updateNumber.value) {
-        alert("Fill all requred fields")
+        alert("Fill all required fields")
     } else {
         LStorage.updateContactLS();
         UI.updateContact();
         toggleModal(e);
-        clearInputs();
     }
 });
 
@@ -228,6 +224,7 @@ const toggleModal = (e) => {
         backdrop.classList.toggle("visible");
         updateContactModal.classList.toggle("visible");
     }
+
     if (e.target.classList.contains("backdrop")) {
         backdrop.classList.remove("visible");
         newContactModal.classList.remove("visible");
